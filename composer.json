@@ -1,22 +1,17 @@
 {
-	"name": "pipekung/yii2-grid",
-	"description": "Yii2 Grid",
-	"keywords": ["yii", "grid"],
-	"type": "yii2-extension",
-	"support": {
-		"issues": "https://github.com/Pipekung/yii2-grid/issues",
-		"source": "https://github.com/Pipekung/yii2-grid"
-	},
-	"authors": [
-		{
-			"name": "Pipekung",
-			"email": "cj.pipekung@gmail.com"
-		}
-	],
-	"require": {
-		"kartik-v/yii2-grid": "*"
-	},
-	"autoload": {
+    "name": "pipekung/yii2-grid",
+    "description": "Yii2 Grid View",
+    "require": {
+        "kartik-v/yii2-grid": "*"
+    },
+    "authors": [
+        {
+            "name": "Pipekung",
+            "email": "genius.society@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
 		"psr-4": {
 			"pipekung\\grid\\": ""
 		}

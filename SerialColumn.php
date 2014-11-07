@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
 
 /**
- * Extends the Yii's SerialColumn for the Grid widget [[\rnd\widgets\RndGridView]]
+ * Extends the Yii's SerialColumn for the Grid widget [[\pipekung\widgets\GridView]]
  * with various enhancements.
  *
  * SerialColumn displays a column of row numbers (1-based).

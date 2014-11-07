@@ -1,6 +1,7 @@
 {
     "name": "pipekung/yii2-grid",
     "description": "Yii2 Grid View",
+    "license": "MIT",
     "require": {
         "kartik-v/yii2-grid": "*"
     },

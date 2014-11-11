@@ -9,10 +9,10 @@ use yii\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
 
 /**
- * Extends the Yii's ActionColumn for the Grid widget [[\rnd\widgets\RndGridView]]
+ * Extends the Yii's ActionColumn for the Grid widget [[\pipekung\widgets\GridView]]
  * with various enhancements.
  *
- * ActionColumn is a column for the [[RndGridView]] widget that displays buttons
+ * ActionColumn is a column for the [[GridView]] widget that displays buttons
  * for viewing and manipulating the items.
  *
  * @author Pipekung Specialz <chanja@kku.ac.th>
@@ -43,13 +43,13 @@ class ActionColumn extends \kartik\grid\ActionColumn {
      * @var string the horizontal alignment of each column. Should be one of
      * 'left', 'right', or 'center'.
      */
-    public $hAlign = RndGridView::ALIGN_CENTER;
+    public $hAlign = GridView::ALIGN_CENTER;
 
     /**
      * @var string the vertical alignment of each column. Should be one of
      * 'top', 'middle', or 'bottom'.
      */
-    public $vAlign = RndGridView::ALIGN_MIDDLE;
+    public $vAlign = GridView::ALIGN_MIDDLE;
 
     /**
      * @var boolean whether to force no wrapping on all table cells in the column
@@ -61,7 +61,7 @@ class ActionColumn extends \kartik\grid\ActionColumn {
      * @var string the width of each column (matches the CSS width property).
      * @see http://www.w3schools.com/cssref/pr_dim_width.asp
      */
-    public $width = '97px';
+    public $width = '80px';
 
     /**
      * @var array HTML attributes for the view action button. The following additional
@@ -220,7 +220,7 @@ class ActionColumn extends \kartik\grid\ActionColumn {
      * Renders the header cell.
      */
     public function renderHeaderCell() {
-        if ($this->grid->filterModel !== null && $this->mergeHeader && $this->grid->filterPosition === RndGridView::FILTER_POS_BODY) {
+        if ($this->grid->filterModel !== null && $this->mergeHeader && $this->grid->filterPosition === GridView::FILTER_POS_BODY) {
             $this->headerOptions['rowspan'] = 2;
             Html::addCssClass($this->headerOptions, 'kv-merged-header');
         }
@@ -231,7 +231,7 @@ class ActionColumn extends \kartik\grid\ActionColumn {
      * Renders the filter cell.
      */
     public function renderFilterCell() {
-        if ($this->grid->filterPosition === RndGridView::FILTER_POS_BODY && $this->mergeHeader) {
+        if ($this->grid->filterPosition === GridView::FILTER_POS_BODY && $this->mergeHeader) {
             return null;
         }
         return parent::renderFilterCell();

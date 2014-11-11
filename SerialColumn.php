@@ -22,13 +22,13 @@ class SerialColumn extends \kartik\grid\SerialColumn {
      * @var string the horizontal alignment of each column. Should be one of
      * 'left', 'right', or 'center'.
      */
-    public $hAlign = RndGridView::ALIGN_CENTER;
+    public $hAlign = GridView::ALIGN_CENTER;
 
     /**
      * @var string the vertical alignment of each column. Should be one of
      * 'top', 'middle', or 'bottom'.
      */
-    public $vAlign = RndGridView::ALIGN_MIDDLE;
+    public $vAlign = GridView::ALIGN_MIDDLE;
 
     /**
      * @var boolean whether to force no wrapping on all table cells in the column
@@ -40,7 +40,7 @@ class SerialColumn extends \kartik\grid\SerialColumn {
      * @var string the width of each column (matches the CSS width property).
      * @see http://www.w3schools.com/cssref/pr_dim_width.asp
      */
-    public $width = '50px';
+    public $width = '30px';
 
     /**
      * @var boolean|string whether the page summary is displayed above the footer for this column.
@@ -52,7 +52,7 @@ class SerialColumn extends \kartik\grid\SerialColumn {
     /**
      * @var string the summary function to call for the column
      */
-    public $pageSummaryFunc = RndGridView::F_SUM;
+    public $pageSummaryFunc = GridView::F_SUM;
 
     /**
      * @var array HTML attributes for the page summary cell
@@ -88,7 +88,7 @@ class SerialColumn extends \kartik\grid\SerialColumn {
      * Renders the header cell.
      */
     public function renderHeaderCell() {
-        if ($this->grid->filterModel !== null && $this->mergeHeader && $this->grid->filterPosition === RndGridView::FILTER_POS_BODY) {
+        if ($this->grid->filterModel !== null && $this->mergeHeader && $this->grid->filterPosition === GridView::FILTER_POS_BODY) {
             $this->headerOptions['rowspan'] = 2;
             Html::addCssClass($this->headerOptions, 'kv-merged-header');
         }
@@ -99,7 +99,7 @@ class SerialColumn extends \kartik\grid\SerialColumn {
      * Renders the filter cell.
      */
     public function renderFilterCell() {
-        if ($this->grid->filterPosition === RndGridView::FILTER_POS_BODY && $this->mergeHeader) {
+        if ($this->grid->filterPosition === GridView::FILTER_POS_BODY && $this->mergeHeader) {
             return null;
         }
         return parent::renderFilterCell();
@@ -136,15 +136,15 @@ class SerialColumn extends \kartik\grid\SerialColumn {
         switch ($type) {
             case null:
                 return array_sum($data);
-            case RndGridView::F_SUM:
+            case GridView::F_SUM:
                 return array_sum($data);
-            case RndGridView::F_COUNT:
+            case GridView::F_COUNT:
                 return count($data);
-            case RndGridView::F_AVG:
+            case GridView::F_AVG:
                 return count($data) > 0 ? array_sum($data) / count($data) : null;
-            case RndGridView::F_MAX:
+            case GridView::F_MAX:
                 return max($data);
-            case RndGridView::F_MIN:
+            case GridView::F_MIN:
                 return min($data);
         }
         return '';

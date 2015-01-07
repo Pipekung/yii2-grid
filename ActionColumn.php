@@ -113,7 +113,7 @@ class ActionColumn extends \kartik\grid\ActionColumn {
     /**
      * @var bool is the dropdown menu to be rendered?
      */
-    private $_isDropdown = false;
+    protected $_isDropdown = false;
 
     public function init() {
         $this->_isDropdown = ($this->grid->bootstrap && $this->dropdown);
